@@ -23,27 +23,27 @@ data <- data %>%
   mutate(apr_risk_of_mortality_binary = if_else(apr_risk_of_mortality %in% c('Minor', 'Moderate'), 0, 1)) %>%
   dplyr::select(-apr_risk_of_mortality, -admission_id)
 
-# Split data into training and testing sets
+# Train/test split
 trainIndex <- sample(1:nrow(data), 0.5 * nrow(data))
 trainData <- data[trainIndex, ]
 testData <- data[-trainIndex, ]
 
-# Build the gradient boosting model
+# Build the model
 model <- gbm(
   apr_risk_of_mortality_binary ~ age_group + gender + race + length_of_stay + type_of_admission + hospital_service_area + patient_disposition,
   data = trainData,
-  distribution = "bernoulli",
+  distribution = 'bernoulli',
   n.trees = 100)
 
 # Generate predicted probabilities for the test data
-prob <- predict(model, newdata = testData, type = "response")
+prob <- predict(model, newdata = testData, type = 'response')
 
 # Add binary predictions to the test data for further analysis
 predictions <- ifelse(prob > 0.5, 1, 0)
 testData$predicted_risk_of_mortality <- predictions
 testData$predicted_probability_of_mortality <- prob
 
-# Save relative importance of variables to RDS 
+# Save summary results to RDS 
 summary <- summary(model)
 ensure_directory('figures')
 write_rds(summary, 'figures/relative_predictive_importance.rds')
