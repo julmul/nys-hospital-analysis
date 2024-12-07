@@ -37,3 +37,4 @@ plt <- ggplot() +
 # Save figure
 ensure_directory('figures')
 ggsave('figures/hospitals_per_county.png', plt, height = 5, width = 7)
+write_rds(plt, 'figures/hospitals_per_county.rds')

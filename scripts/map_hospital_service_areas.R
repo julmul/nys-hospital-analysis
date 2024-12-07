@@ -35,11 +35,13 @@ centroid_coords <- st_coordinates(centroids)
 centroids <- cbind(centroids, centroid_coords)
 
 # Plot hospital service areas in NYS
-ggplot() +
+plt <- ggplot() +
   geom_sf(data = hsa) +
   theme_void() +
-  geom_text(data = centroids, aes(x = X, y = Y, label = labels), color = 'black', size = 3.5)
+  geom_text(data = centroids, aes(x = X, y = Y, label = labels), color = 'black', size = 3) +
+  coord_sf(expand = FALSE)
 
 # Save figure
 ensure_directory('figures')
-ggsave('figures/nys_hospital_service_areas.png', height = 7, width = 7, dpi = 600)
+ggsave('figures/nys_hospital_service_areas.png', plt, height = 7, width = 7, dpi = 600)
+write_rds(plt, 'figures/nys_hospital_service_areas.rds')
