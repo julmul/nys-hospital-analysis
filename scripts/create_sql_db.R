@@ -5,11 +5,9 @@ data <- read_csv('derived_data/hospital_discharges_tidied.csv')
 
 con <- dbConnect(RSQLite::SQLite(), dbname = 'derived_data/hospital-discharges.db')
 
-dbExecute(con, 'DROP TABLE IF EXISTS patient')
 dbExecute(con, 'DROP TABLE IF EXISTS hospital')
-dbExecute(con, 'DROP TABLE IF EXISTS admission_details')
-dbExecute(con, 'DROP TABLE IF EXISTS diagnosis')
-dbExecute(con, 'DROP TABLE IF EXISTS procedure')
+dbExecute(con, 'DROP TABLE IF EXISTS demographic')
+dbExecute(con, 'DROP TABLE IF EXISTS clinical')
 dbExecute(con, 'DROP TABLE IF EXISTS payment')
 
 dbWriteTable(con, 'hospital', 
