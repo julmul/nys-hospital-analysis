@@ -46,8 +46,9 @@ top_10_cod <- expired %>%
 ggplot(data = top_10_cod) +
   theme_minimal() +
   geom_bar(aes(x = reorder(ccsr_diagnosis_description, -prop), y = prop), stat = 'identity', fill = 'black') +
-  theme(axis.text.x = element_text(angle = 35, hjust = 1)) +
-  labs(x = 'Diagnosis Description', y = 'Proportion of Total Deaths')
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) +
+  labs(x = 'APR-DRG Diagnosis Description', y = 'Proportion of Total Deaths')
 
 # Save figure
 ensure_directory('figures')
