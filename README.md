@@ -14,6 +14,8 @@ git clone https://github.com/julmul/BIOS611.git
 
 Once this is complete, navigate to the directory on your computer using `cd BIOS611`.
 
+This project uses Git LFS due to the large size of the hospital data set. Ensure you have Git LFS installed. Once you have navigated to the project directory, type `git lfs pull` into your terminal to retrieve the source data.
+
 ## Building the Docker Container
 
 To access this repository, you must have Docker installed. Once Docker is installed, run `./start.sh` from your terminal to build the container.
