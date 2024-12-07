@@ -12,6 +12,8 @@ To clone this repository, run the following command in your terminal:
 git clone https://github.com/julmul/BIOS611.git
 ```
 
+Once this is complete, navigate to the directory on your computer using `cd BIOS611`.
+
 ## Building the Docker Container
 
 To access this repository, you must have Docker installed. Once Docker is installed, run `./start.sh` from your terminal to build the container.
