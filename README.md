@@ -2,6 +2,8 @@
 
 This is my final project for BIOS611 - Introduction to Data Science. This analysis uses public, de-identified New York State hospital inpatient discharge data from 2022. Data are from https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/5dtw-tffi/about_data
 
+This Docker container was built on an M2 Mac.
+
 ## Getting Started
 
 To clone this repository, run the following command in your terminal:
@@ -16,6 +18,6 @@ To access this repository, you must have Docker installed. Once Docker is instal
 
 ## Accessing the Report
 
-Once the container is built, open your browser and navigate to `localhost:8787`, then log in using the username `rstudio` and the password `yourpassword`. This will open RStudio
+Once the container is built, open your browser and navigate to `localhost:8787`, then log in using the username `rstudio` and the password `yourpassword`. This will open RStudio.
 
 To build the final report, type `make report.pdf` in the terminal within RStudio.
