@@ -41,7 +41,7 @@ I explored the relationship between hospital service areas and the likelihood of
 
 ## Classifying Risk Factors
 
-I built a GBM model to predict the risk of mortality (binary variable--either minor/moderate or major/extreme) based on patient demographics, hospital characteristics, and some clinical data. I performed a train-test split and trained my model on the training data. I was interested in which factors had the highest relative predictive importance for determining a patient's risk of mortality in the hospital based on this data set:
+I built a GBM model to predict the risk of mortality (binary variable--either minor/moderate or major/extreme) based on patient demographics, hospital characteristics, and some clinical data. I performed a train-test split and trained my model on the training data. I was interested in which factors had the highest relative importance for predicting a patient's risk of mortality in the hospital based on this data set:
 
 ```{r, echo=F}
 readRDS('figures/relative_predictive_importance.rds')
@@ -64,7 +64,7 @@ I performed k-means clustering on aggregated hospital data, identifying high-ris
 
 The cluster results are visualized on a map of New York State below. Hospitals clustered as 'high-risk' were distributed throughout the state, tending to be located in major urban centers or rural northern areas.
 
-```{r, echo=F, fig.width=4}
+```{r, echo=F, fig.width=6}
 readRDS('figures/nys_map_hospital_clusters.rds')
 ```
 
