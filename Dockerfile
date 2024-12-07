@@ -13,4 +13,4 @@ RUN apt-get update && apt-get install -y \
 
 RUN apt update && apt install git 
 
-RUN R -e "install.packages(c('tidyverse', 'sf', 'RSQLite', 'gbm', 'caret', 'nnet'))"
+RUN R -e "install.packages(c('tidyverse', 'sf', 'RSQLite', 'gbm', 'caret', 'nnet', 'forcats'))"
