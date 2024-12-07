@@ -27,7 +27,13 @@ As expected, hospitals tended to cluster around major cities in New York state. 
 
 ![](./figures/hospitals_per_county.png)
 
-# Differences in Outcome
+# Differences in Outcome by Region
+
+The NYS SPARCS database divides hospitals into 8 'hospital service areas,' visualized below:
+
+![](./figures/nys_hospital_service_areas.png)
+
+I decided to explore differences in patient outcomes by these different hospital service areas.
 
 `r round(as.numeric(readLines('logs/total_rom_nonmissing.txt')) / as.numeric(readLines('logs/total_rom_count.txt')) * 100, 2)`% of patients had data on 'APR-DRG Risk of Mortality.' This classification categorizes patients into risk strata based on diagnosis, procedures, age, gender, and other clinical factors. There are 4 levels: minor risk, moderate risk, major risk, and extreme risk.
 
