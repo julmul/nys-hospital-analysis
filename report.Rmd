@@ -10,61 +10,80 @@ output: pdf_document
 
 The data used in this analysis were extracted from the New York State Statewide Planning and Research Cooperative System (SPARCS), a comprehensive database that provides demographic, clinical, and financial data for inpatient hospital discharges in New York State in 2022. This data set includes detailed information on patient characteristics, diagnoses, procedures, length of stay, and various other clinical and administrative details.
 
-The data set includes the following variables:
-
-* Hospital and Facility Information: hospital service area, hospital county, facility name, operating certificate number, permanent facility ID
-
-* Demographic Information**: age group, gender, race, ethnicity, patient 3-digit home zip code
-
-* Clinical Data: length of stay, type of admission, patient disposition, diagnosis and procedure codes, APR severity of illness, risk of mortality, birth weight (if neonatal)
-
-* Financial and Administrative Data: total charges, total costs, payment typologies
-
 
 # Distribution of Hospitals
 
 As expected, hospitals tended to cluster around major cities in New York state. A majority of the counties in the state had at least one hospital. Only 5 counties--Tioga, Seneca, Hamilton, Greene, and Washington--do not have any hospital facilities included in the data set.
 
-![](./figures/hospitals_per_county.png)
+```{r, echo=F, fig.width=6}
+readRDS('figures/hospitals_per_county.rds')
+```
+
 
 # Differences in Outcome by Region
 
 The NYS SPARCS database divides hospitals into 8 'hospital service areas,' visualized below:
 
-![](./figures/nys_hospital_service_areas.png)
+```{r, echo=F, fig.width=4}
+readRDS('figures/nys_hospital_service_areas.rds')
+```
 
 I decided to explore differences in patient outcomes by these different hospital service areas.
 
-`r round(as.numeric(readLines('logs/total_rom_nonmissing.txt')) / as.numeric(readLines('logs/total_rom_count.txt')) * 100, 2)`% of patients had data on 'APR-DRG Risk of Mortality.' This classification categorizes patients into risk strata based on diagnosis, procedures, age, gender, and other clinical factors. There are 4 levels: minor risk, moderate risk, major risk, and extreme risk.
+`r round(as.numeric(readLines('logs/total_rom_nonmissing.txt')) / as.numeric(readLines('logs/total_rom_count.txt')) * 100, 2)`% of patients had data on 'APR-DRG Risk of Mortality.' This classification categorizes patients into risk strata based on diagnosis, procedures, age, gender, and other clinical factors. There are 4 levels: minor, moderate, major, and extreme. Proportions of patients classified as each mortality risk varied slightly by hospital service area.
 
-Proportions of patients classified as each mortality risk varied slightly by hospital service area.
-
-![](./figures/regional_mortality_risk_proportions.png)
+![](./figures/regional_mortality_risk_proportions.png){width=75%}
 
 I explored the relationship between hospital service areas and the likelihood of a patient being classified as 'extreme' risk of mortality using logistic regression. New York City was used as the referent group, due to the fact that that hospital service area had the highest concentration of hospitals. The resulting odds ratios are summarized below. Odds of being classified as 'extreme' risk of mortality were highest in the Southern Tier.
 
 ![](./figures/regional_mortality_odds.png){width=65%}
 
 
-# Classifying Risk Factors
+## Classifying Risk Factors
 
-The classification of risk factors for patient outcomes highlights key predictors based on their relative importance.
+I built a GBM model to predict the risk of mortality (binary variable--either minor/moderate or major/extreme) based on patient demographics, hospital characteristics, and some clinical data. I performed a train-test split and trained my model on the training data. I was interested in which factors had the highest relative predictive importance for determining a patient's risk of mortality in the hospital based on this data set:
 
-```{r, echo = F}
+```{r, echo=F}
 readRDS('figures/relative_predictive_importance.rds')
 ```
 
-Patient disposition is the most significant factor, followed be length of stay and age group. These factors appear to play the most significant roles in determining outcomes.
+Patient disposition is the most significant factor, followed by length of stay, age group, and type of admission. These factors appear to play the most significant roles in determining outcomes.
 
 
-# Deceased Patients
+# Clustering Hospitals by Risk
 
-Out of the `r format(as.numeric(readLines('logs/total_pt_count.txt')), scientific = FALSE)` total patients included in the data set, `r format(as.numeric(readLines('logs/total_deceased_count.txt')), scientific = FALSE)` (`r round(as.numeric(readLines('logs/total_deceased_count.txt')) / as.numeric(readLines('logs/total_pt_count.txt')) * 100, 2)`%) were reported to have died. The clinical diagnosis codes for patients who died in the hospital are depicted below, with septicemia being the most common diagnosis:
+I performed k-means clustering on aggregated hospital data, identifying high-risk and low-risk clusters based on average APR risk of mortality, average length of stay, and average total charges for each hospital. The results are visualized below:
+
+![](./figures/hospital_clusters_high_risk.png){width=75%}
+
+4 high-risk outliers were identified from the plot: 
+
+* Blythedale Children's Hospital (Westchester County) - New York State's only specialty children's hospital; provides care for children with complex medical needs
+* Henry J. Carter Specialty Hospital (Manhattan) - Performs specialty long-term care for medically fragile individuals
+* Calvary Hospital (locations in Bronx and Kings County) - Provides palliative care for adults with terminal illness
+
+The cluster results are visualized on a map of New York State below. Hospitals clustered as 'high-risk' were distributed throughout the state, tending to be located in major urban centers or rural northern areas.
+
+```{r, echo=F}
+readRDS('figures/nys_map_hospital_clusters.rds')
+```
+
+
+# Most Common Diagnoses
+
+The top 10 most common diagnoses among all hospitalized patients in NYS in 2022 is seen below. The most common diagnoses were determined from all patients in the data set, then proportions of patients with these diagnoses were calculated by hospital service area. Septicemia was identified as the most common diagnosis among all patients, with the highest proportion of septicemia being in the Southern Tier.
+
+![](./figures/top_10_diagnosis_overall.png)
+
+Out of the `r format(as.numeric(readLines('logs/total_pt_count.txt')), scientific = FALSE)` total patients included in the data set, `r format(as.numeric(readLines('logs/total_deceased_count.txt')), scientific = FALSE)` (`r round(as.numeric(readLines('logs/total_deceased_count.txt')) / as.numeric(readLines('logs/total_pt_count.txt')) * 100, 2)`%) were reported to have died. The clinical diagnosis codes for patients who died in the hospital are depicted below, with septicemia being the most common diagnosis.
 
 ![](./figures/top_10_diagnosis_deceased_pts.png)
 
 
 # Conclusions
 
-* The odds of being classified as 'extreme risk of mortality' are highest in the Southern Tier.
-* Septicemia was, by far, the most common diagnosis among patients who died in the hospital.
+* Hospitals in the data set tended to be concentrated in major cities, but hospital facilities were distributed relatively evenly throughout the state (present in all but 5 counties).
+* The odds of being classified as 'extreme risk of mortality' vary by hospital service area in NYS, with the Southern Tier having the highest odds.
+* The most significant factors in predicting risk of mortality were patient disposition, length of stay, age group, and type of admission.
+* Clustering revealed that hospitals with patients having the most adverse outcomes tended to be hospitals which specialized in intensive care. However, some hospitals in rural northern areas were also grouped into the high-risk cluster.
+* Septicemia was the most common diagnosis among patients.
