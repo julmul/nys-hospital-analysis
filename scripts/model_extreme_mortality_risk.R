@@ -18,7 +18,7 @@ region_mortality_data <- clinical %>%
   mutate(apr_risk_of_mortality = factor(apr_risk_of_mortality, levels = c('Minor', 'Moderate', 'Major', 'Extreme')),
          hospital_service_area = factor(hospital_service_area, levels = unique(hospital_service_area)))
 
-# Fit binary logistic regression for Extreme risk category
+# Fit binary logistic regression for 'Extreme' risk category
 model_extreme <- glm(apr_risk_of_mortality == 'Extreme' ~ hospital_service_area, 
                      data = region_mortality_data, 
                      family = 'binomial')
@@ -52,7 +52,7 @@ results_extreme <- data.frame(
   arrange(desc(odds_ratio)) %>%
   mutate(hospital_service_area = factor(hospital_service_area, levels = hospital_service_area))
   
-# Create the forest plot
+# Create forest plot
 plt <- ggplot(results_extreme, aes(x = hospital_service_area, y = odds_ratio)) +
   geom_point(size = 3) +
   geom_errorbar(aes(ymin = lower_ci, ymax = upper_ci), width = 0.2) +

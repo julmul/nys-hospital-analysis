@@ -29,7 +29,7 @@ gps <- gps %>%
 # Plot counts of hospitalizations by county
 plt <- ggplot() +
   geom_sf(data = nys, aes(fill = hospitals), color = 'black') +
-  scale_fill_gradient(low = 'lightblue', high = 'darkblue', na.value = 'lightyellow') +
+  scale_fill_gradient(low = 'lightblue', high = 'darkblue', na.value = 'white') +
   theme_void() +
   labs(fill = 'Number of Hospitals') +
   geom_sf(data = gps, color = 'black', fill = 'white', shape = 21, stroke = 0.5)
