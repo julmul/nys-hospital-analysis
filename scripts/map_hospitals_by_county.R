@@ -2,6 +2,8 @@ library(tidyverse)
 library(sf)
 library(RSQLite)
 
+source('scripts/utils.R')
+
 conn <- dbConnect(RSQLite::SQLite(), dbname = 'derived_data/hospital-discharges.db')
 hospitals <- dbGetQuery(conn, 'SELECT * FROM hospital')
 dbDisconnect(conn)
@@ -32,4 +34,6 @@ plt <- ggplot() +
   labs(fill = 'Number of Hospitals') +
   geom_sf(data = gps, color = 'black', fill = 'white', shape = 21, stroke = 0.5)
 
+# Save figure
+ensure_directory('figures')
 ggsave('figures/hospitals_per_county.png', plt, height = 5, width = 7)

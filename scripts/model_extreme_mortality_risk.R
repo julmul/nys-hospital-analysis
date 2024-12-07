@@ -1,6 +1,8 @@
 library(tidyverse)
 library(RSQLite)
 
+source('scripts/utils.R')
+
 conn <- dbConnect(RSQLite::SQLite(), dbname = 'derived_data/hospital-discharges.db')
 hospitals <- dbGetQuery(conn, 'SELECT admission_id, hospital_service_area FROM hospital')
 clinical <- dbGetQuery(conn, 'SELECT admission_id, apr_risk_of_mortality, apr_drg_code FROM clinical')
@@ -61,5 +63,6 @@ plt <- ggplot(results_extreme, aes(x = hospital_service_area, y = odds_ratio)) +
   theme_minimal(base_size = 20) +
   coord_flip()
 
-# Save the plot
+# Save figure
+ensure_directory('figures')
 ggsave('figures/regional_mortality_odds.png', plt, height = 7, width = 7)

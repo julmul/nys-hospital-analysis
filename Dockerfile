@@ -7,8 +7,10 @@ RUN apt-get update && apt-get install -y \
     libgdal-dev \
     libgeos-dev \
     libproj-dev \
-    libmysqlclient-dev && \
+    libmysqlclient-dev \
+    sqlite3 && \
     rm -rf /var/lib/apt/lists/*
 
-RUN R -e "install.packages(c('tidyverse'))"
-RUN R -e "install.packages(c('sf'))"
+RUN apt update && apt install git 
+
+RUN R -e "install.packages(c('tidyverse', 'sf', 'RSQLite', 'gbm', 'caret', 'nnet'))"

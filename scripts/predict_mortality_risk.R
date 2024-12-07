@@ -3,7 +3,8 @@ library(caret)
 library(tidyverse)
 library(RSQLite)
 
-# Load your dataset
+source('scripts/utils.R')
+
 conn <- dbConnect(RSQLite::SQLite(), dbname = 'derived_data/hospital-discharges.db')
 patient <- dbGetQuery(conn, 'SELECT admission_id, age_group, gender, race, ethnicity FROM demographic')
 hospital <- dbGetQuery(conn, 'SELECT admission_id, hospital_service_area FROM hospital')
@@ -44,4 +45,5 @@ testData$predicted_probability_of_mortality <- prob
 
 # Save relative importance of variables to RDS 
 summary <- summary(model)
+ensure_directory('figures')
 write_rds(summary, 'figures/relative_predictive_importance.rds')
