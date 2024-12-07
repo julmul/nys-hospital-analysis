@@ -1,5 +1,5 @@
 ---
-title: "Analyzing Risk Factors and Mortality Outcomes in New York State Hospital Discharges, 2022"
+title: "Analysis of New York State Hospital Discharges, 2022"
 subtitle: 'BIOS611: Introduction to Data Science'
 author: "Julia Muller"
 date: "7 December 2024"
@@ -36,7 +36,7 @@ I decided to explore differences in patient outcomes by these different hospital
 
 I explored the relationship between hospital service areas and the likelihood of a patient being classified as 'extreme' risk of mortality using logistic regression. New York City was used as the referent group, due to the fact that that hospital service area had the highest concentration of hospitals. The resulting odds ratios are summarized below. Odds of being classified as 'extreme' risk of mortality were highest in the Southern Tier.
 
-![](./figures/regional_mortality_odds.png){width=65%}
+![](./figures/regional_mortality_odds.png){width=50%}
 
 
 ## Classifying Risk Factors
@@ -64,7 +64,7 @@ I performed k-means clustering on aggregated hospital data, identifying high-ris
 
 The cluster results are visualized on a map of New York State below. Hospitals clustered as 'high-risk' were distributed throughout the state, tending to be located in major urban centers or rural northern areas.
 
-```{r, echo=F}
+```{r, echo=F, fig.width=4}
 readRDS('figures/nys_map_hospital_clusters.rds')
 ```
 
@@ -77,7 +77,7 @@ The top 10 most common diagnoses among all hospitalized patients in NYS in 2022 
 
 Out of the `r format(as.numeric(readLines('logs/total_pt_count.txt')), scientific = FALSE)` total patients included in the data set, `r format(as.numeric(readLines('logs/total_deceased_count.txt')), scientific = FALSE)` (`r round(as.numeric(readLines('logs/total_deceased_count.txt')) / as.numeric(readLines('logs/total_pt_count.txt')) * 100, 2)`%) were reported to have died. The clinical diagnosis codes for patients who died in the hospital are depicted below, with septicemia being the most common diagnosis.
 
-![](./figures/top_10_diagnosis_deceased_pts.png)
+![](./figures/top_10_diagnosis_deceased_pts.png){width=90%}
 
 
 # Conclusions
