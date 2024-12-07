@@ -1,7 +1,64 @@
 ---
-title: "BIOS611 Project"
+title: "Analyzing Risk Factors and Mortality Outcomes in New York State Hospital Discharges, 2022"
+subtitle: 'BIOS611: Introduction to Data Science'
 author: "Julia Muller"
-date: "`r Sys.Date()`"
+date: "7 December 2024"
 output: pdf_document
 ---
 
+# Introduction
+
+The data used in this analysis were extracted from the New York State Statewide Planning and Research Cooperative System (SPARCS), a comprehensive database that provides demographic, clinical, and financial data for inpatient hospital discharges in New York State in 2022. This data set includes detailed information on patient characteristics, diagnoses, procedures, length of stay, and various other clinical and administrative details.
+
+The data set includes the following variables:
+
+* Hospital and Facility Information: hospital service area, hospital county, facility name, operating certificate number, permanent facility ID
+
+* Demographic Information**: age group, gender, race, ethnicity, patient 3-digit home zip code
+
+* Clinical Data: length of stay, type of admission, patient disposition, diagnosis and procedure codes, APR severity of illness, risk of mortality, birth weight (if neonatal)
+
+* Financial and Administrative Data: total charges, total costs, payment typologies
+
+
+# Distribution of Hospitals
+
+As expected, hospitals tended to cluster around major cities in New York state. A majority of the counties in the state had at least one hospital. Only 5 counties--Tioga, Seneca, Hamilton, Greene, and Washington--do not have any hospital facilities included in the data set.
+
+![](./figures/hospitals_per_county.png)
+
+# Differences in Outcome
+
+`r round(as.numeric(readLines('logs/total_rom_nonmissing.txt')) / as.numeric(readLines('logs/total_rom_count.txt')) * 100, 2)`% of patients had data on 'APR-DRG Risk of Mortality.' This classification categorizes patients into risk strata based on diagnosis, procedures, age, gender, and other clinical factors. There are 4 levels: minor risk, moderate risk, major risk, and extreme risk.
+
+Proportions of patients classified as each mortality risk varied slightly by hospital service area.
+
+![](./figures/regional_mortality_risk_proportions.png)
+
+I explored the relationship between hospital service areas and the likelihood of a patient being classified as 'extreme' risk of mortality using logistic regression. New York City was used as the referent group, due to the fact that that hospital service area had the highest concentration of hospitals. The resulting odds ratios are summarized below. Odds of being classified as 'extreme' risk of mortality were highest in the Southern Tier.
+
+![](./figures/regional_mortality_odds.png){width=65%}
+
+
+# Classifying Risk Factors
+
+The classification of risk factors for patient outcomes highlights key predictors based on their relative importance.
+
+```{r, echo = F}
+readRDS('figures/relative_predictive_importance.rds')
+```
+
+Patient disposition is the most significant factor, followed be length of stay and age group. These factors appear to play the most significant roles in determining outcomes.
+
+
+# Deceased Patients
+
+Out of the `r format(as.numeric(readLines('logs/total_pt_count.txt')), scientific = FALSE)` total patients included in the data set, `r format(as.numeric(readLines('logs/total_deceased_count.txt')), scientific = FALSE)` (`r round(as.numeric(readLines('logs/total_deceased_count.txt')) / as.numeric(readLines('logs/total_pt_count.txt')) * 100, 2)`%) were reported to have died. The clinical diagnosis codes for patients who died in the hospital are depicted below, with septicemia being the most common diagnosis:
+
+![](./figures/top_10_diagnosis_deceased_pts.png)
+
+
+# Conclusions
+
+* The odds of being classified as 'extreme risk of mortality' are highest in the Southern Tier.
+* Septicemia was, by far, the most common diagnosis among patients who died in the hospital.
