@@ -1,11 +1,9 @@
 # NYS Hospital Discharges
 
 This repository contains my final project for BIOS611 - Introduction to Data Science.
-This analysis uses public, de-identified New York State hospital inpatient discharge data from 2022. The dataset is sourced from [New York State Health Data](https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/5dtw-tffi/about_data).
+This analysis uses public, de-identified New York State hospital inpatient discharge data from 2022. This dataset is sourced from [New York State Health Data](https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/5dtw-tffi/about_data). Shape files used for mapping were retrieved from [New York State GIS Clearinghouse](https://gis.ny.gov/civil-boundaries).
 
-This project demonstrates data cleaning, exploration, and analysis techniques in R, and is packaged within a Docker container for easy setup and reproducibility.
-
-Note: This Docker container was built on an M2 Mac.
+The goal of this project is to analyze patterns in hospital admissions, identify regional differences in patient outcomes, and build predictive models to understand the factors influencing mortality risk in hospitals across New York State. The analysis demonstrates key data science techniques such as data cleaning, exploratory data analysis, and statistical analysis using R. Additionally, the project showcases the use of Docker for containerization, ensuring easy setup, reproducibility, and portability of the analysis.
 
 
 ## Getting Started
@@ -40,6 +38,8 @@ Note: This data retrieval step must be completed prior to running the analysis. 
 ## Building the Docker Container
 
 This project is containerized using Docker for easy reproducibility. Ensure you have Docker installed on your machine; if not, follow the instructions on the [Docker website](https://www.docker.com/get-started/).
+
+Note: The Docker container was built and tested on an M2 Mac, so there may be slight differences in behavior if you are using a different operating system.
 
 Build the Docker container by running the following command in the terminal:
 
