@@ -1,1 +1,1 @@
-curl -o hospital_data.csv 'https://health.data.ny.gov/api/views/5dtw-tffi/rows.csv?accessType=DOWNLOAD'
+curl -o source_data/hospital_data.csv 'https://health.data.ny.gov/api/views/5dtw-tffi/rows.csv?accessType=DOWNLOAD'
