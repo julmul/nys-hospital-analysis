@@ -1,8 +1,9 @@
-library(tidyverse)
+
+suppressPackageStartupMessages(library(tidyverse))
 
 source('scripts/utils.R')
 
-data <- read_csv('source_data/NYS_hospital_discharges_2022_20241004.csv')
+data <- read_csv('source_data/hospital_data.csv', show_col_types = F)
 
 # Ensure all column names are lowercase with no spaces
 col_names <- names(data) %>%
