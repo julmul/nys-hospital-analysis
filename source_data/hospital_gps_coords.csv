@@ -1,0 +1,208 @@
+hospital_county,facility_name,latitude,longitude,permanent_facility_id
+Richmond,Staten Island University Hospital Prince's Bay,40.51779112,-74.19613621,001737
+Richmond,Richmond University Medical Center,40.54066426,-74.23627596,001738
+Richmond,Staten Island University Hosp-North,40.58530915,-74.08530445,001740
+Kings,Coney Island Hospital,40.5876591,-73.96501634,001294
+Queens,St Johns Episcopal Hospital So Shore,40.59888114,-73.75356962,001635
+Kings,Mount Sinai Brooklyn,40.61891154,-73.94303002,001324
+Kings,Maimonides Medical Center,40.63970991,-73.99873582,001305
+Kings,Calvary Hospital,40.64668282,-74.02104519,010223
+Kings,NYU Langone Hospital-Brooklyn,40.64668932,-74.02069696,001304
+Nassau,Mount Sinai South Nassau,40.65199097,-73.63034046,000527
+Kings,Brookdale Hospital Medical Center,40.65421732,-73.90888108,001286
+Kings,University Hospital of Brooklyn,40.65514189,-73.94457817,001320
+Kings,Kings County Hospital Center,40.65685748,-73.94337183,001301
+Kings,Kingsbrook Jewish Medical Center,40.6594713,-73.93329725,001315
+Kings,New York - Presbyterian Brooklyn Methodist Hospital,40.6684238,-73.97784601,001306
+Nassau,Long Island Jewish Valley Stream,40.68128021,-73.6862134,000518
+Kings,Interfaith Medical Center,40.6827465,-73.9385647,001309
+Kings,Brooklyn Hospital Center - Downtown Campus,40.6906788,-73.97830232,001288
+Nassau,Mercy Hospital,40.69113298,-73.63071224,000513
+Suffolk,Good Samaritan Hospital Medical Center,40.69264522,-73.29321735,000925
+Kings,Woodhull Medical & Mental Health Center,40.69961361,-73.94268836,001692
+Queens,Jamaica Hospital Medical Center,40.70096734,-73.81630265,001629
+Kings,Wyckoff Heights Medical Center,40.70438857,-73.91754791,001318
+Manhattan,New York-Presbyterian/Lower Manhattan Hospital,40.71025262,-74.00462926,001437
+Queens,Queens Hospital Center,40.71750016,-73.80421033,001633
+Suffolk,South Shore University Hospital,40.72573381,-73.24124834,000924
+Nassau,Nassau University Medical Center,40.72747605,-73.55410452,000528
+Nassau,St. Joseph Hospital,40.72747921,-73.47857835,000551
+Queens,Long Island Jewish Forest Hills,40.72929062,-73.85124747,001638
+Manhattan,New York Eye and Ear Infirmary of Mount Sinai,40.73207198,-73.98448664,001460
+Manhattan,Mount Sinai Beth Israel,40.7332775,-73.98202653,001439
+Manhattan,NYU Langone Orthopedic Hospital,40.73453222,-73.98303915,001446
+Manhattan,Bellevue Hospital Center,40.7402528,-73.97617232,001438
+Nassau,NYU Langone Hospital-Long Island,40.7412041,-73.64303569,000511
+Manhattan,NYU Langone Hospitals,40.74233763,-73.97349686,001463
+Queens,Elmhurst Hospital Center,40.74521955,-73.8857797,001626
+Queens,New York - Presbyterian/Queens,40.74738598,-73.82524979,001637
+Queens,Cohen Children's Medical Center,40.75409916,-73.70833012,003376
+Nassau,Long Island Jewish Medical Center,40.75474079,-73.70767707,001630
+Queens,Flushing Hospital Medical Center,40.75549385,-73.81703925,001628
+Queens,Long Island Jewish Medical Center,40.75706624,-73.70757991,001630
+Manhattan,Memorial Hospital for Cancer and Allied Diseases,40.76434687,-73.95617593,001453
+Manhattan,New York-Presbyterian Hospital - New York Weill Cornell Center,40.76455527,-73.95390155,001458
+Manhattan,New York-Presbyterian David H. Koch Center,40.76474206,-73.9558715,010139
+Manhattan,Hospital for Special Surgery,40.76521766,-73.95289227,001447
+Manhattan,David H. Koch Center For Cancer Care,40.76734054,-73.9509268,010355
+Queens,Mount Sinai Hospital - Mount Sinai Hospital of Queens,40.76826078,-73.9247945,001639
+Manhattan,Mount Sinai West,40.7699772,-73.98713422,001466
+Manhattan,Lenox Hill Hospital,40.77400654,-73.96071463,001450
+Nassau,Plainview Hospital,40.77536521,-73.47888996,000552
+Nassau,North Shore University Hospital,40.77585104,-73.70116003,000541
+Suffolk,Long Island Community Hospital,40.78074333,-72.97683771,000885
+Manhattan,Metropolitan Hospital Center,40.78519889,-73.94461125,001454
+Manhattan,Mount Sinai Hospital,40.79002953,-73.95253125,001456
+Manhattan,Henry J. Carter Specialty Hospital,40.80333482,-73.94124986,001486
+Nassau,St. Francis Hospital & Heart Center,40.8044836,-73.67043613,000563
+Manhattan,Mount Sinai Morningside,40.80548459,-73.96158387,001469
+Nassau,Syosset Hospital,40.81104396,-73.50861529,000550
+Manhattan,Harlem Hospital Center,40.81494639,-73.93991797,001445
+Bronx,Lincoln Medical & Mental Health Center,40.81639395,-73.92479768,001172
+Manhattan,New York-Presbyterian Hospital - Columbia Presbyterian Center,40.841244,-73.94084579,001464
+Bronx,BronxCare Hospital Center,40.84375529,-73.91095213,001178
+Bronx,BronxCare Hospital Center,40.84375529,-73.91095213,001164
+Bronx,Montefiore Med Center - Jack D Weiler Hosp of A Einstein College Div,40.84884115,-73.84588426,003058
+Bronx,Calvary Hospital Inc,40.85221642,-73.84328007,001175
+Bronx,SBH Health System,40.85315886,-73.89151305,001176
+Bronx,Jacobi Medical Center,40.85671403,-73.84717709,001165
+Suffolk,St Catherine of Siena Hospital,40.86848811,-73.22312352,000943
+Nassau,Glen Cove Hospital,40.87099901,-73.62235995,000490
+Manhattan,New York Presbyterian Hospital - Allen Hospital,40.8734669,-73.91292428,003975
+Suffolk,Huntington Hospital,40.87970635,-73.41623507,000913
+Bronx,Montefiore Medical Center - Henry & Lucy Moses Div,40.88079003,-73.87834586,001169
+Bronx,North Central Bronx Hospital,40.88112832,-73.88117904,001186
+Suffolk,Stony Brook Southampton Hospital,40.88509072,-72.3801237,000889
+Bronx,Montefiore Medical Center-Wakefield Hospital,40.89410327,-73.86098355,001168
+Suffolk,Stony Brook University Hospital,40.9097331,-73.11526775,000245
+Westchester,Montefiore New Rochelle Hospital,40.91243995,-73.78694528,001072
+Westchester,Montefiore Mount Vernon Hospital,40.91287353,-73.84052655,001061
+Westchester,St. Joseph's Medical Center,40.92960567,-73.89755281,001098
+Suffolk,Peconic Bay Medical Center,40.93420496,-72.6733706,000938
+Suffolk,John T Mather Memorial Hospital of Port Jefferson New York Inc,40.93969392,-73.0536141,000895
+Westchester,SJRH - Park Care Pavilion,40.94035263,-73.89160696,001099
+Suffolk,St. Charles Hospital,40.9467069,-73.06094156,000896
+Westchester,SJRH - St Johns Division,40.96918133,-73.88639363,001097
+Westchester,St. Joseph's MC-St. Vincent's Westchester Division,40.98926885,-73.70869945,001133
+Westchester,SJRH - Dobbs Ferry Pavillion,41.0145297,-73.86184096,001124
+Westchester,Winifred Masterson Burke Rehabilitation Hospital,41.01749041,-73.75223751,001046
+Westchester,White Plains Hospital Center,41.02609213,-73.76894429,001045
+Westchester,New York-Presbyterian Westchester Behavioral Health Center,41.02901305,-73.75488784,001047
+Westchester,Blythedale Children's Hospital,41.07508829,-73.79975958,001138
+Rockland,Montefiore Nyack,41.09630364,-73.92605342,000776
+Westchester,Phelps Hospital,41.10967785,-73.86263707,001129
+Suffolk,Stony Brook Eastern Long Island Hospital,41.11046023,-72.36083049,000891
+Rockland,Good Samaritan Hospital of Suffern,41.11108231,-74.13479203,000779
+Rockland,Helen Hayes Hospital,41.21453272,-73.98801292,000775
+Orange,St Anthony Community Hospital,41.26140213,-74.35751036,000704
+Westchester,NewYork-Presbyterian/Hudson Valley Hospital,41.29288409,-73.89272973,001039
+Orange,Bon Secours Community Hospital,41.36803855,-74.6818346,000708
+Putnam,Putnam Hospital,41.38361662,-73.66318912,000752
+Orange,Garnet Health Medical Center,41.44226299,-74.3688919,000699
+Dutchess,Vassar Brothers Medical Center,41.69296102,-73.93591561,000181
+Dutchess,Mid-Hudson Valley Division of Westchester Medical Center,41.71863948,-73.92694752,000180
+Ulster,Ellenville Regional Hospital,41.73312885,-74.37929993,001002
+Ulster,HealthAlliance Hospital Mary's Avenue Campus,41.92082947,-73.99996889,000989
+Ulster,HealthAlliance Hospital Broadway Campus,41.9266026,-73.99530403,000990
+Dutchess,Northern Dutchess Hospital,41.9357861,-73.91266063,000192
+Cattaraugus,Olean General Hospital,42.09021588,-78.42728106,000066
+Chautauqua,UPMC Chautauqua at WCA,42.09173195,-79.231418969999993,000103
+Chemung,Arnot Ogden Medical Center,42.10022986,-76.82754213,000116
+Chemung,St. Joseph's Hospital,42.12204589,-76.80842982,000118
+Allegany,Memorial Hosp of Wm F & Gertrude F Jones A/K/A Jones Memorial Hosp,42.12339595,-77.95054108,000039
+Steuben,Corning Hospital,42.13571807,-76.96955237,000866
+Delaware,Margaretville Hospital,42.14664589,-74.64188129,000170
+Delaware,Delaware Valley Hospital Inc,42.16457137,-75.12878532,000174
+Allegany,Cuba Memorial Hospital Inc,42.21416159,-78.28717003,000037
+Delaware,O'Connor Hospital,42.26851164,-74.91614669,000165
+Chautauqua,Westfield Memorial Hospital Inc,42.33767747,-79.56020248,000111
+Schuyler,Schuyler Hospital,42.35251549,-76.8599851,000858
+Steuben,St. James Hospital,42.3552456,-77.66327372,000870
+Steuben,Ira Davenport Memorial Hospital,42.37455996,-77.27892813,000873
+Otsego,A.O. Fox Memorial Hospital,42.45800049,-75.05228087,000739
+Tompkins,Cayuga Medical Center at Ithaca,42.46903889,-76.53785615,000977
+Chautauqua,"Brooks-TLC Hospital System, Inc.",42.48008325,-79.33466248,000098
+Erie,Bertrand Chaffee Hospital,42.50928598,-78.65895885,000280
+Chenango,Chenango Memorial Hospital Inc,42.54154566,-75.52626873,000128
+Livingston,Nicholas H. Noyes Memorial Hospital,42.55292044,-77.69770759,000393
+Cortland,Guthrie Cortland Medical Center,42.60882616,-76.18747715,000158
+Albany,Albany Medical Center - South Clinical Campus,42.64598789,-73.78010306,000002
+Albany,Albany Medical Center Hospital,42.65328947,-73.77610755,000001
+Albany,St. Peter's Hospital,42.65629335,-73.80376928,000005
+Yates,Soldiers and Sailors Memorial Hospital of Yates County,42.67062533,-77.06113206,001158
+Schoharie,Cobleskill Regional Hospital,42.68706875,-74.48189287,010216
+Otsego,Mary Imogene Bassett Hospital,42.69578094,-74.92357309,000746
+Rensselaer,Samaritan Hospital,42.73336335,-73.67329554,000756
+Rensselaer,Samaritan Hospital - St. Mary's Campus,42.74316966,-73.67622846,000755
+Wyoming,Wyoming County Community Hospital,42.75431763,-78.13097197,001153
+Schenectady,Ellis Hospital - Bellevue Woman's Care Center Division,42.79279836,-73.8789841,000848
+Schenectady,Ellis Hospital,42.82088409,-73.9161936,000829
+Schenectady,Sunnyview Hospital and Rehabilitation Center,42.82144091,-73.91493805,000831
+Erie,Mercy Hospital of Buffalo,42.84783117,-78.81302584,000213
+Ontario,F.F. Thompson Hospital,42.87541865,-77.29079182,000678
+Ontario,Geneva General Hospital,42.87664091,-76.98830135,000671
+Erie,Roswell Park Cancer Institute,42.89894522,-78.8645121,000216
+Erie,Buffalo General Medical Center,42.90092662,-78.86610392,000207
+Erie,John R. Oishei Children's Hospital,42.90100854,-78.86790715,000208
+Erie,Sisters of Charity Hospital - St. Joseph Campus,42.91433943,-78.78239576,000292
+Erie,Erie County Medical Center,42.92459233,-78.83224828,000210
+Erie,Sisters of Charity Hospital,42.92846586,-78.84799917,000218
+Cayuga,Auburn Community Hospital,42.94150126,-76.56460959,000085
+Ontario,Clifton Springs Hospital and Clinic,42.96053675,-77.13619584,000676
+Erie,Kenmore Mercy Hospital,42.97792158,-78.87988425,000267
+Erie,Millard Fillmore Suburban Hospital,42.99411807,-78.73018677,003067
+Onondaga,UPSTATE University Hospital at Community General,43.00786344,-76.16783836,000628
+Onondaga,Crouse Hospital,43.04159667,-76.13855609,000636
+Herkimer,Little Falls Hospital,43.04422065,-74.84761016,000362
+Onondaga,St. Joseph's Hospital Health Center,43.05653842,-76.14970058,000630
+Wayne,Newark-Wayne Community Hospital,43.06909247,-77.10417538,001028
+Fulton,Nathan Littauer Hospital,43.07158776,-74.33168243,000330
+Madison,Oneida Health Hospital,43.07787884,-75.65402875,000397
+Saratoga,Saratoga Hospital,43.085954,-73.79703809,000818
+Niagara,Niagara Falls Memorial Medical Center,43.09365957,-79.04938467,000574
+Oneida,Faxton-St Lukes Healthcare St Lukes Division,43.09728036,-75.27594619,000599
+Onondaga,Crouse Hospital - Commonwealth Division,43.09850235,-76.10749709,009059
+Monroe,Strong Memorial Hospital,43.1233182,-77.62490765,000413
+Monroe,Highland Hospital,43.13541668,-77.60627832,000409
+Monroe,Unity Specialty Hospital,43.14870202,-77.63715085,000412
+Niagara,Mount St. Mary's Hospital and Health Center,43.15411398,-79.03269703,000583
+Niagara,Eastern Niagara Hospital - Lockport Division,43.17761002,-78.67156121,000565
+Monroe,The Unity Hospital of Rochester,43.19259766,-77.70522855,000471
+Monroe,Rochester General Hospital,43.19272943,-77.58788272,000411
+Orleans,Medina Memorial Hospital,43.22354802,-78.39727819,000718
+Oneida,"Rome Memorial Hospital, Inc",43.22931455,-75.44274539,000589
+Warren,Glens Falls Hospital,43.306353,-73.64592834,001005
+Oswego,Oswego Hospital,43.45396604,-76.51638052,000727
+Oswego,Lakeview Center for Mental Health and Wellness,43.45947065,-76.50686063,000012
+Lewis,Lewis County General Hospital,43.79609251,-75.49912983,000383
+St Lawrence,Clifton-Fine Hospital,44.16258183,-75.05643531,000817
+Essex,The University of Vermont Health Network - Elizabethtown Community Hospital,44.21611349,-73.59589405,000303
+Franklin,Adirondack Medical Center-Saranac Lake Site,44.34548127,-74.14128942,000324
+St Lawrence,Gouverneur Hospital,44.43897557,-75.43785698,000812
+St Lawrence,Canton-Potsdam Hospital,44.69063875,-74.98366254,000815
+St Lawrence,Claxton-Hepburn Medical Center,44.69165212,-75.49985063,000798
+Clinton,The University of Vermont Health Network - Champlain Valley Physicians Hospital,44.69996883,-73.46916012,000135
+Franklin,The University of Vermont Health Network - Alice Hyde Medical Center,44.85694587,-74.29144153,000325
+St Lawrence,Massena Hospital,44.93626849,-74.90888711,000804
+Albany,St. Peter's Addiction Recovery Center,42.65763523,-73.80348148,009431
+Broome,Our Lady of Lourdes Memorial Hospital,42.0916155,-75.93624006,000043
+Broome,United Health Services Hospitals Inc. - Wilson Medical Center,42.114364,-75.95812038,000058
+Broome,United Health Services Hospitals Inc. - Binghamton General Hospital,42.08688958,-75.91466109,000042
+Columbia,Columbia Memorial Hospital,42.24639014,-73.77749395,000146
+Genesee,United Memorial Medical Center North Street Campus,43.00509405,-78.17657547,000339
+Genesee,United Memorial Medical Center Bank Street Campus,42.9992741,-78.18094615,000340
+Jefferson,Samaritan Medical Center,43.96513382,-75.91399371,000367
+Jefferson,Carthage Area Hospital Inc,43.98720618,-75.59408932,000379
+Jefferson,"River Hospital, Inc.",44.34219831,-75.9223254,000377
+Kings,"New York Community Hospital of Brooklyn, Inc",40.61401627,-73.94836257,001293
+Madison,Community Memorial Hospital Inc,42.81570849,-75.54011289,000401
+Montgomery,St. Mary's Healthcare - Amsterdam Memorial Campus,42.95924126,-74.18731752,000482
+Montgomery,St. Mary's Healthcare,42.95565003,-74.21605801,000484
+Oneida,St Elizabeth Medical Center,43.08225603,-75.26739841,000598
+Onondaga,University Hospital SUNY Health Science Center,43.04230781,-76.13987183,000635
+Orange,St Luke's Cornwall Hospital/Newburgh,41.50356044,-74.01485434,000694
+Sullivan,Garnet Health Medical Center - Catskills,41.70954713,-74.73764935,000971
+Sullivan,Garnet Health Medical Center - Catskills - G. Hermann Site,41.74045735,-75.04712921,000968
+Westchester,New York - Presbyterian Hospital,40.95007846,-73.83334909,001122
+Westchester,Westchester Medical Center,41.08685433,-73.80634558,001139
+Westchester,Northern Westchester Hospital,41.19730698,-73.72580226,001117
