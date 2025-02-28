@@ -1,12 +1,22 @@
-library(tidyverse)
-library(RSQLite)
+#####################################################
+# Generate bar plot of mortality risk by service area
+# Author: Julia Muller
+# Date: 7 December 2024
+# Last modified: December 2024
+#####################################################
 
+# Load libraries
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(RSQLite)
+})
+
+# Source utility functions
 source('scripts/utils.R')
 
-conn <- dbConnect(RSQLite::SQLite(), dbname = 'derived_data/hospital-discharges.db')
-hospitals <- dbGetQuery(conn, 'SELECT admission_id, hospital_service_area FROM hospital')
-clinical <- dbGetQuery(conn, 'SELECT admission_id, apr_risk_of_mortality FROM clinical')
-dbDisconnect(conn)
+# Pull hospital and clinical data from database
+hospitals <- query_db('SELECT admission_id, hospital_service_area FROM hospital')
+clinical <- query_db('SELECT admission_id, apr_risk_of_mortality FROM clinical')
 
 # Identify number of patients with data on risk of mortality
 rom_total <- clinical %>% nrow()
