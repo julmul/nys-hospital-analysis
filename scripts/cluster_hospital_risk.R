@@ -1,17 +1,28 @@
-library(tidyverse)
-library(RSQLite)
-library(sf)
+#####################################################
+# Perform k-means clustering of hospital risk
+# Author: Julia Muller
+# Date: 7 December 2024
+# Last modified: February 2025
+#####################################################
 
+# Load libraries
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(RSQLite)
+  library(sf)
+})
+
+# Source utility functions
 source('scripts/utils.R')
 
-conn <- dbConnect(RSQLite::SQLite(), dbname = 'derived_data/hospital-discharges.db')
-hospital <- dbGetQuery(conn, 'SELECT admission_id, facility_name, permanent_facility_id, hospital_service_area, hospital_county FROM hospital')
-clinical <- dbGetQuery(conn, 'SELECT admission_id, length_of_stay, apr_risk_of_mortality, apr_severity_of_illness_code FROM clinical')
-payment <- dbGetQuery(conn, 'SELECT admission_id, total_charges FROM payment')
-dbDisconnect(conn)
+# Pull hospital, clinical, and payment data from database
+hospital <- query_db('SELECT admission_id, facility_name, permanent_facility_id, hospital_service_area, hospital_county FROM hospital')
+clinical <- query_db('SELECT admission_id, length_of_stay, apr_risk_of_mortality, apr_severity_of_illness_code FROM clinical')
+payment <- query_db('SELECT admission_id, total_charges FROM payment')
 
+# Import shapefiles and GPS data
 nys <- read_sf('source_data/Counties_Shoreline.shp')
-gps <- read_csv('source_data/hospital_gps_coords.csv')
+gps <- read_csv('source_data/hospital_gps_coords.csv', show_col_types = F)
 
 # Combine and clean the data
 data <- hospital %>%

@@ -1,13 +1,24 @@
-library(tidyverse)
-library(RSQLite)
-library(sf)
+#####################################################
+# Generate map of NYS hospital service areas
+# Author: Julia Muller
+# Date: 5 December 2024
+# Last modified: February 2025
+#####################################################
 
+# Load libraries
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(RSQLite)
+  library(sf)
+})
+
+# Source utility functions
 source('scripts/utils.R')
 
-conn <- dbConnect(RSQLite::SQLite(), dbname = 'derived_data/hospital-discharges.db')
-hospitals <- dbGetQuery(conn, 'SELECT hospital_service_area, hospital_county FROM hospital')
-dbDisconnect(conn)
+# Pull hospital data from database
+hospitals <- query_db('SELECT hospital_service_area, hospital_county FROM hospital')
 
+# Import NYS shape file
 nys <- read_sf('source_data/Counties_Shoreline.shp')
 
 # Get hospital counties and hospital service areas
@@ -26,7 +37,7 @@ hsa <- nys %>%
     NAME == 'New York' ~ 'New York City',
     TRUE ~ hospital_service_area)) %>%
   group_by(hospital_service_area) %>%
-  summarize(geometry = st_union(geometry))
+  summarize(geometry = st_union(geometry), .groups = 'drop')
 
 # Calculate centroids of each hospital service area for labeling
 centroids <- st_centroid(hsa)
